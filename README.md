@@ -1,6 +1,27 @@
 # AppMovies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+This project was generated with Angular CLI 8 consuming an online movie database named TMD (The Movie Database) through a RESTful Api service.
+
+
+//////////////////////////////////
+
+
+## Features of the app:
+
+- request sent through a search input
+- request of every genre of the database and movies of each genre
+- sort filter
+- movie details page
+- similar movies on each movie
+
+
+////////////////////////////////
+
+
+live demo - https://ricardo3sousa.github.io/cinetown-app/
+
+api website - https://www.themoviedb.org/
+
 
 ## Development server
 
