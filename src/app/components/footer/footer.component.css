@@ -1,0 +1,14 @@
+.footer{
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-text1{
+    margin-top: 20px;
+}
+
+.footer-text2{
+    margin-bottom: 5px;
+}

@@ -1,0 +1,102 @@
+.navbar{
+    z-index: 9999999;
+    height: 60px;
+}
+
+.dropdown-menu{
+    margin-top: 10px;
+    border: none;
+    width: 250px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.navbar a{
+    color: #6C757D;
+}
+
+.navbar a:hover{
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.5s ease;
+}
+
+.navbar a:focus{
+    opacity: 0.5;
+}
+
+.overlay{
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    background: white;
+}
+
+.search-box{
+    border-width: 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    background-color: #F8F9FA;
+    width: 300px;
+}
+
+.search-box:focus{
+    box-shadow:none;
+    -webkit-box-shadow:none; 
+    border-width: 2px;
+}
+
+.container-list{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.searchText{
+    line-height: 2;
+}
+
+.searchText:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1230px) {
+
+    .gridSearch{
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+
+    .gridSearch{
+        width: 800px;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+
+    .gridSearch{
+        width: 600px;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+    .gridSearch{
+        width: 400px;
+    }
+
+    .dropdown-menu{
+        height: auto;
+        overflow-y: visible;
+    }
+
+}

@@ -1,0 +1,82 @@
+<div style="height: 120px;"></div>
+
+<div *ngIf="!movie" style="text-align: center; height: 100vh;">
+    Error! Movie not found.<br>
+    <button class="btn btn-link" (click)="back()">Back</button>
+</div>
+
+
+<!------------------->
+<!------------------->
+<!-- movie desktop -->
+<div *ngIf="movie" id="movieDesk">
+    <div class="row container-movie">
+        <div class="col">
+            <img class="backdrop" src="http://image.tmdb.org/t/p/original/{{movie.backdrop_path}}">
+        </div>
+        <div class="col info-movie">
+            
+            <div class="text-muted" *ngFor="let item of movieGenre" style="padding-bottom: 30px;">
+                Genre / <a class="text-muted" [routerLink]="['/list', item.id, item.name]">{{item.name}}</a>
+            </div>  
+            <h2>{{movie.title}} &nbsp;<span class="vote-box">{{movie.vote_average}}</span></h2>
+            <br>
+            <em>{{movie.tagline}}</em>
+            <br>
+            <br>
+            <p>{{movie.overview}}</p>
+            <br>
+            <hr>
+            <span class="text-muted">released in {{movie.release_date | slice:0:4}} &nbsp; | &nbsp; duration: {{movie.runtime}} min</span>
+            
+        </div>
+    </div>
+</div>
+
+<!------------------>
+<!------------------>
+<!-- movie mobile -->
+<div *ngIf="movie" id="movieMob">
+    <div class="container-movieMob">
+        <div class="text-muted" *ngFor="let item of movieGenre" style="padding-bottom: 30px;">
+            Genre / <a class="text-muted" [routerLink]="['/list', item.id, item.name]">{{item.name}}</a>
+        </div>
+        <h2>{{movie.title}} &nbsp;<span class="vote-box">{{movie.vote_average}}</span></h2>
+        <div style="height: 10px;"></div>
+        <img class="backdropMob" src="http://image.tmdb.org/t/p/original/{{movie.backdrop_path}}">
+        <br>
+        <br>
+        <em>{{movie.tagline}}</em>
+        <br>
+        <br>
+        <br>
+        <h6>Overview</h6>
+        <p>{{movie.overview}}</p>
+        <br>
+        <hr>
+            <span class="text-muted">released in {{movie.release_date | slice:0:4}} &nbsp; | &nbsp; duration: {{movie.runtime}} min</span>
+    </div>
+</div>
+
+<div style="height: 120px;"></div>
+
+<!------------------->
+<!------------------->
+<!-- movie similar -->
+<div class="grid" id="gridDesk">
+    <h3>Similar movies</h3>
+    <hr>
+        <div *ngIf="!movieSim">
+            No similar movies found!
+        </div>
+    <div class="row align-items-center">
+        <div  class="no-gutters col" *ngFor="let mSim of movieSim">
+            <a [routerLink]="['/movie', mSim.id]" (click)="refresh();">
+                <img src="http://image.tmdb.org/t/p/w154/{{mSim.poster_path}}">
+            </a>
+            <div class="overlay-mS"></div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

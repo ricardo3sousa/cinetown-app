@@ -1,0 +1,46 @@
+<div style="height: 120px;"></div>
+
+<div style="text-align: center;">
+    <button (click)="getSort($event)" value="popular" name="popular" class="btn btn-link sort">Popular</button>
+    <button (click)="getSort($event)" value="now_playing" name="now playing" class="btn btn-link sort">Now Playing</button>
+    <button (click)="getSort($event)" value="top_rated" name="top rated" class="btn btn-link sort">Top Rated</button>
+</div>
+
+<br>
+
+<!-- grid -->
+<div class="container-grid">
+
+    <span class="subtitle">{{sortTitle}}</span>
+
+    <hr class="hrow">
+    <br>
+
+    <!-- row -->
+    <div class="row align-items-center">
+
+    <!-- card -->
+    <div class="no-gutters col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let item of list">
+        <div class="card shadow-sm">
+            <a [routerLink]="['/movie', item.id]">
+                <img class="card-img" src="http://image.tmdb.org/t/p/w342/{{item.poster_path}}">
+                <div class="overlay-card">
+                </div>
+                <div class="overlay-text">
+                    <div class="overlay-container">
+                        <p>{{item.release_date | slice:0:4}}<span style="float: right;">{{item.vote_average}}</span></p>
+                        <div class="text-container">
+                            <h4>{{item.title}}</h4><br>
+                            <p>{{item.overview | slice:0:150}}...</p>
+                        </div>
+                        <a class="card-link">more info</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- .end card -->
+</div>
+</div>
