@@ -8,11 +8,10 @@ This project was generated with Angular CLI 8 consuming an online movie database
 
 ## Features of the app:
 
-- request sent through a search input
-- request of every genre of the database and movies of each genre
-- sort filter
-- movie details page
-- similar movies on each movie
+- request sent through a search input that returns movies which name corresponds to the value the user writes on the search input
+- 1 query that returns movie genres of the database and another query that returns the movies from each genre
+- we have a query that returns the details of a movie grabbing the movie's id
+- and also a query that sorts the results by popularity etc...
 
 
 ////////////////////////////////
